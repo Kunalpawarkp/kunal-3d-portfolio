@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { HiBars3, HiXMark } from 'react-icons/hi2';
-import { navLinks } from '../data/portfolioData';
+import { navLinks, personalInfo } from '../data/portfolioData';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 20);
     onScroll();
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
@@ -17,9 +17,9 @@ const Navbar = () => {
   return (
     <motion.header
       className={`navbar-wrap ${scrolled ? 'scrolled' : ''}`}
-      initial={{ y: -80, opacity: 0 }}
+      initial={{ y: -70, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.7, ease: 'easeOut' }}
+      transition={{ duration: 0.7 }}
     >
       <nav className="navbar shell panel">
         <a href="#home" className="brand">
@@ -36,9 +36,21 @@ const Navbar = () => {
         </div>
 
         <div className="nav-actions">
-          <a className="button button-ghost desktop-cta" href="#contact">
-            Let&apos;s Talk
+          <div className="social-mini desktop-social">
+            {personalInfo.socialLinks.map((item) => {
+              const Icon = item.icon;
+              return (
+                <a key={item.label} href={item.href} target="_blank" rel="noreferrer" aria-label={item.label}>
+                  <Icon />
+                </a>
+              );
+            })}
+          </div>
+
+          <a className="button button-ghost desktop-cta" href="/resume.pdf" target="_blank" rel="noreferrer">
+            Resume
           </a>
+
           <button
             className="menu-toggle"
             aria-label="Toggle menu"
@@ -52,18 +64,29 @@ const Navbar = () => {
       {open && (
         <motion.div
           className="mobile-nav shell panel"
-          initial={{ opacity: 0, y: -10 }}
+          initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
         >
           {navLinks.map((link) => (
             <a key={link.label} href={link.href} onClick={() => setOpen(false)}>
               {link.label}
             </a>
           ))}
-          <a className="button button-primary" href="#contact" onClick={() => setOpen(false)}>
-            Start a Conversation
+
+          <a className="button button-primary" href="/resume.pdf" target="_blank" rel="noreferrer">
+            Open Resume
           </a>
+
+          <div className="mobile-social">
+            {personalInfo.socialLinks.map((item) => {
+              const Icon = item.icon;
+              return (
+                <a key={item.label} href={item.href} target="_blank" rel="noreferrer">
+                  <Icon /> {item.label}
+                </a>
+              );
+            })}
+          </div>
         </motion.div>
       )}
     </motion.header>

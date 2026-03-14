@@ -1,6 +1,7 @@
 import {
   FaAws,
   FaDocker,
+  FaEnvelope,
   FaGithub,
   FaJava,
   FaJenkins,
@@ -14,7 +15,6 @@ import {
   SiMysql,
   SiPostgresql,
   SiSpringboot,
-  SiTailwindcss,
   SiThreedotjs,
 } from 'react-icons/si';
 
@@ -25,15 +25,16 @@ export const personalInfo = {
   location: 'Pune, India',
   email: 'kunalpawar.dev@example.com',
   shortBio:
-    'I craft modern, scalable digital products across frontend, backend, and interactive 3D experiences. My work blends premium UI, smooth product thinking, and solid engineering fundamentals.',
+    'I craft modern, scalable digital products across frontend, backend, and interactive 3D experiences. My work blends premium UI, smooth product thinking, and strong engineering fundamentals.',
   stats: [
     { label: 'Years Building', value: '3+' },
     { label: 'Projects Delivered', value: '20+' },
     { label: 'Core Stack', value: 'React + Java' },
   ],
   socialLinks: [
-    { label: 'GitHub', href: 'https://github.com/', icon: FaGithub },
+    { label: 'GitHub', href: 'https://github.com/Kunalpawarkp', icon: FaGithub },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/', icon: FaLinkedinIn },
+    { label: 'Email', href: 'mailto:kunalpawar.dev@example.com', icon: FaEnvelope },
   ],
 };
 
@@ -68,7 +69,7 @@ export const highlights = [
 export const skills = [
   {
     category: 'Frontend',
-    items: ['JavaScript', 'React', 'Three.js', 'HTML5', 'CSS3', 'Responsive UI', 'Animation Systems'],
+    items: ['JavaScript', 'React', 'Three.js', 'HTML5', 'CSS3', 'Responsive UI', 'Framer Motion'],
   },
   {
     category: 'Backend',
@@ -76,7 +77,7 @@ export const skills = [
   },
   {
     category: 'Data & Infra',
-    items: ['MySQL', 'PostgreSQL', 'MongoDB', 'AWS Basics', 'Docker', 'Jenkins', 'CI/CD'],
+    items: ['MySQL', 'PostgreSQL', 'MongoDB', 'AWS', 'Docker', 'Jenkins', 'CI/CD'],
   },
   {
     category: 'Ways of Working',
@@ -96,7 +97,6 @@ export const techOrbit = [
   { name: 'MySQL', icon: SiMysql },
   { name: 'PostgreSQL', icon: SiPostgresql },
   { name: 'MongoDB', icon: SiMongodb },
-  { name: 'Tailwind Mindset', icon: SiTailwindcss },
   { name: 'Jenkins', icon: FaJenkins },
 ];
 
@@ -126,64 +126,75 @@ export const experience = [
       'Performed developer testing and supported end-to-end flow understanding for smooth execution.',
     ],
   },
-  {
-    company: 'Mauli Project Management Pvt. Limited',
-    role: 'Software Developer',
-    period: 'Previous',
-    description:
-      'Gained hands-on experience delivering software features, debugging issues, and strengthening core full stack engineering skills in a production environment.',
-    bullets: [
-      'Supported feature implementation and maintenance in business-critical applications.',
-      'Contributed to code fixes, stability improvements, and day-to-day development workflows.',
-    ],
-  },
 ];
 
 export const projects = [
   {
     title: 'FusionLive Workflow Modernization',
-    stack: ['Java', 'Spring', 'Struts', 'ExtJS', 'Enterprise UI'],
+    stack: ['Java', 'Spring', 'Struts', 'ExtJS','Apryse WebViewer'],
     blurb:
-      'Revamped legacy workflow experiences with better status handling, improved UI behavior, and safer validation flows for document-driven product modules.',
-    impact: 'Reduced friction in approval and package flows while keeping business logic stable in a complex legacy environment.',
+      'Revamped legacy workflow experiences with better status handling, improved UI behavior, and safer validation flows for document-driven modules.',
+    impact:
+      'Reduced friction in approval and package flows while keeping business logic stable in a complex legacy environment.',
+    github: 'https://github.com/Kunalpawarkp',
+    demo: 'https://kunal-3d-dev-portfolio.vercel.app',
   },
   {
     title: '3D Developer Portfolio Experience',
     stack: ['React', 'Three.js', 'Framer Motion', 'Vite'],
     blurb:
       'A futuristic, motion-first developer portfolio with immersive depth, interactive sections, cinematic transitions, and responsive 3D storytelling.',
-    impact: 'Showcases frontend creativity while reinforcing full stack credibility and product taste.',
-  },
-  {
-    title: 'Payment Flow Architecture Concept',
-    stack: ['Spring Boot', 'REST APIs', 'Webhook Design', 'Microservices'],
-    blurb:
-      'Designed a realistic payment processing architecture flow featuring secure API integration, webhook orchestration, and modular service boundaries.',
-    impact: 'Demonstrates backend system thinking, fintech-style flow design, and production-oriented API structure.',
+    impact:
+      'Showcases frontend creativity while reinforcing full stack credibility and product taste.',
+    github: 'https://github.com/Kunalpawarkp/kunal-3d-portfolio',
+    demo: 'https://kunal-3d-dev-portfolio.vercel.app',
   },
   {
     title: 'GDPR Compliance Service Module',
     stack: ['Java', 'Spring Boot', 'JUnit', 'PostgreSQL'],
     blurb:
-      'Built compliance-oriented service layers with entity modeling, validations, reusable service logic, and developer test coverage for safer delivery.',
-    impact: 'Strengthened reliability and maintainability in a regulation-sensitive project space.',
+      'Built compliance-oriented service layers with entity modeling, validations, reusable service logic, and developer test coverage.',
+    impact:
+      'Strengthened reliability and maintainability in a regulation-sensitive product space.',
+    github: 'https://github.com/Kunalpawarkp',
+    demo: 'https://kunal-3d-dev-portfolio.vercel.app',
   },
 ];
 
 export const contactCards = [
   {
     title: 'Email',
-    value: 'kunalpawar.dev@example.com',
-    href: 'mailto:kunalpawar.dev@example.com',
+    value: 'kp0764378@gmail.com',
+    href: 'mailto:kp0764378@gmail.com',
   },
   {
     title: 'Location',
     value: 'Pune, India',
-    href: '#contact',
+    href: 'https://maps.google.com/?q=Pune,+India',
+  },
+  {
+    title: 'phoneNo',
+    value: '+91 8482916348',
+    href: 'tel:+91 8482916348',
   },
   {
     title: 'Availability',
-    value: 'Open for strong engineering roles and exciting product collaborations',
+    value: 'Open for strong engineering roles and product collaborations',
     href: '#contact',
   },
 ];
+
+export const chatbotAnswers = {
+  intro:
+    "Hi, I'm Kunal AI. I can tell you about Kunal's skills, projects, experience, and contact details.",
+  skills:
+    'Kunal works with JavaScript, React, Three.js, Java, Spring Boot, REST APIs, MySQL, PostgreSQL, Docker, Jenkins, and AWS.',
+  projects:
+    'Key showcased work includes FusionLive workflow modernization, a 3D developer portfolio, and a GDPR compliance service module.',
+  experience:
+    'Kunal is a Software Engineer at Idox and has worked across full stack enterprise development, backend APIs, UI systems, testing, and feature delivery.',
+  contact:
+    'You can contact Kunal at kunalpawar.dev@example.com and through the links in the portfolio.',
+  resume:
+    'Use the Resume button in the navbar or hero section to open the resume PDF.',
+};

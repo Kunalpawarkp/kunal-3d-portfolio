@@ -1102,3 +1102,59 @@ textarea {
     font-size: 0.85rem;
   }
 }
+.parallax-wrap {
+  position: relative;
+}
+
+.cinematic-panel {
+  position: relative;
+}
+
+.cinematic-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    transparent 22%,
+    transparent 72%,
+    rgba(86, 240, 255, 0.08)
+  );
+  opacity: 0.65;
+}
+
+.project-cinematic {
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.project-cinematic:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.45);
+}
+
+.timeline-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.about-story,
+.highlight-card,
+.skill-card,
+.timeline-card,
+.project-card,
+.contact-card,
+.contact-form,
+.stack-premium-copy,
+.stack-premium-visual,
+.hero-proof-card {
+  will-change: transform, opacity;
+}
+
+.section {
+  scroll-margin-top: 90px;
+}

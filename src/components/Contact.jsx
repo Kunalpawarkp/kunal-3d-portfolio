@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { motion } from 'framer-motion';
+import Reveal from './Reveal';
 import { contactCards, personalInfo } from '../data/portfolioData';
 import SectionHeading from './SectionHeading';
 
@@ -21,67 +21,60 @@ const Contact = () => {
 
   return (
     <section id="contact" className="section shell contact-section">
-      <SectionHeading
-        eyebrow="Contact"
-        title="Let&apos;s build something premium, useful, and unforgettable"
-        description="This contact area continues the same glassy 3D language with layered panels, depth highlights, and a direct path to connect."
-      />
+      <Reveal>
+        <SectionHeading
+          eyebrow="Contact"
+          title="Let&apos;s build something premium, useful, and unforgettable"
+          description="This contact area continues the same glassy 3D language with layered panels, depth highlights, and a direct path to connect."
+        />
+      </Reveal>
 
       <div className="contact-layout">
         <div className="contact-cards">
           {contactCards.map((card, index) => (
-            <motion.a
-              key={card.title}
-              href={card.href}
-              className="contact-card panel tilt-card"
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.55, delay: index * 0.08 }}
-            >
-              <span className="eyebrow tiny">{card.title}</span>
-              <strong>{card.value}</strong>
-            </motion.a>
+            <Reveal key={card.title} delay={index * 0.08} y={36}>
+              <a href={card.href} className="contact-card panel tilt-card cinematic-panel">
+                <span className="eyebrow tiny">{card.title}</span>
+                <strong>{card.value}</strong>
+              </a>
+            </Reveal>
           ))}
         </div>
 
-        <motion.form
-          className="contact-form panel"
-          initial={{ opacity: 0, x: 24 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.65 }}
-        >
-          <div className="form-grid">
-            <label>
-              <span>Your Name</span>
-              <input type="text" name="name" placeholder="Enter your name" value={form.name} onChange={handleChange} />
-            </label>
-            <label>
-              <span>Your Email</span>
-              <input type="email" name="email" placeholder="Enter your email" value={form.email} onChange={handleChange} />
-            </label>
-          </div>
-          <label>
-            <span>Your Message</span>
-            <textarea
-              name="message"
-              rows="6"
-              placeholder="Tell me about the role, product, or idea you want to discuss"
-              value={form.message}
-              onChange={handleChange}
-            />
-          </label>
+        <Reveal x={28} y={22}>
+          <form className="contact-form panel cinematic-panel">
+            <div className="form-grid">
+              <label>
+                <span>Your Name</span>
+                <input type="text" name="name" placeholder="Enter your name" value={form.name} onChange={handleChange} />
+              </label>
+              <label>
+                <span>Your Email</span>
+                <input type="email" name="email" placeholder="Enter your email" value={form.email} onChange={handleChange} />
+              </label>
+            </div>
 
-          <div className="form-actions">
-            <a className="button button-primary" href={mailLink}>
-              Send via Email App
-            </a>
-            <a className="button button-ghost" href={`mailto:${personalInfo.email}`}>
-              Direct Email
-            </a>
-          </div>
-        </motion.form>
+            <label>
+              <span>Your Message</span>
+              <textarea
+                name="message"
+                rows="6"
+                placeholder="Tell me about the role, product, or idea you want to discuss"
+                value={form.message}
+                onChange={handleChange}
+              />
+            </label>
+
+            <div className="form-actions">
+              <a className="button button-primary" href={mailLink}>
+                Send via Email App
+              </a>
+              <a className="button button-ghost" href={`mailto:${personalInfo.email}`}>
+                Direct Email
+              </a>
+            </div>
+          </form>
+        </Reveal>
       </div>
     </section>
   );

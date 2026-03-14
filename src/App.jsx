@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import Hero from './components/Hero';
 import LoadingScreen from './components/LoadingScreen';
 import Navbar from './components/Navbar';
+import ParallaxSection from './components/ParallaxSection';
 import Projects from './components/Projects';
 import ScrollProgress from './components/ScrollProgress';
 import Skills from './components/Skills';
@@ -23,15 +24,35 @@ const App = () => {
       <div className="aurora aurora-one" />
       <div className="aurora aurora-two" />
       <Navbar />
+
       <main>
         <Hero />
-        <About />
-        <Skills />
-        <TechStack />
-        <Experience />
-        <Projects />
-        <Contact />
+
+        <ParallaxSection className="parallax-wrap" offset={40}>
+          <About />
+        </ParallaxSection>
+
+        <ParallaxSection className="parallax-wrap" offset={30}>
+          <Skills />
+        </ParallaxSection>
+
+        <ParallaxSection className="parallax-wrap" offset={50}>
+          <TechStack />
+        </ParallaxSection>
+
+        <ParallaxSection className="parallax-wrap" offset={35}>
+          <Experience />
+        </ParallaxSection>
+
+        <ParallaxSection className="parallax-wrap" offset={45}>
+          <Projects />
+        </ParallaxSection>
+
+        <ParallaxSection className="parallax-wrap" offset={25}>
+          <Contact />
+        </ParallaxSection>
       </main>
+
       <Footer />
       <ChatAssistant />
     </div>
